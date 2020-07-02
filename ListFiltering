@@ -1,0 +1,20 @@
+using System.Collections;
+using System.Collections.Generic;
+using System;
+
+public class ListFilterer
+{
+   public static IEnumerable<int> GetIntegersFromList(List<object> listOfItems)
+   {
+      var intList = new List<int>();
+      foreach(var i in listOfItems)
+      {
+        if(i.GetType() == typeof(int))
+        {
+          intList.Add(Convert.ToInt32(i));
+        }
+      }
+      
+      return intList;
+   }
+}
